@@ -44,7 +44,7 @@ const updateGoal = asyncHandler(async (req, res) => {
 
     res.status(200).json(updatedGoal)
 })
-//desc Delete goals
+//desc Delete goals 
 //route  DELETE /api/goals/:id
 //access Private
 
@@ -56,7 +56,7 @@ const deleteGoal = asyncHandler(async (req, res) => {
         throw new Error('Goal not found')
     }
 
-    await Goal.findByIdAndDelete(req.params.id)
+    await Goal.deleteOne()
 
     res.status(200).json({ id: req.params})
 })
